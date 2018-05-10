@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/message', function () {
+    $message = DemoClass::demoMethod();
+    echo $message; //This is custome Facade demo
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
